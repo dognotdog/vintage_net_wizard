@@ -17,7 +17,13 @@ defmodule VintageNetWizard.MixProject do
       docs: docs(),
       aliases: [docs: ["docs", &copy_images/1]],
       package: package(),
-      description: description()
+      description: description(),
+      preferred_cli_env: %{
+        docs: :docs,
+        "hex.publish": :docs,
+        "hex.build": :docs,
+        "coveralls.circle": :test
+      }
     ]
   end
 
