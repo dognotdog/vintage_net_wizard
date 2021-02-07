@@ -1,6 +1,6 @@
 "use strict";
 
-(() => {
+function applyConfiguration(title, button_color) {
   const state = {
     view: "trying",
     dots: "",
@@ -8,7 +8,8 @@
     targetElem: document.querySelector(".content"),
     configurationStatus: "not_configured",
     completed: false,
-    ssid: document.getElementById("ssid").getAttribute("value")
+    ssid: document.getElementById("ssid").getAttribute("value"),
+    title: title
   }
 
   function runGetStatus() {
@@ -57,6 +58,10 @@
     if (view === "configurationBad") {
       btnClass = "btn-danger";
       btnText = "Complete Without Verification";
+    }
+
+    if (view != "configurationBad") {
+      button.style.backgroundColor = button_color;
     }
 
     button.classList.add("btn");
@@ -136,4 +141,4 @@
       "Content-Type": "application/json"
     }
   }).then(resp => runGetStatus());
-})();
+}
