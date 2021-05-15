@@ -1,7 +1,7 @@
 defmodule VintageNetWizard.MixProject do
   use Mix.Project
 
-  @version "0.4.2"
+  @version "0.4.3"
   @source_url "https://github.com/nerves-networking/vintage_net_wizard"
 
   def project do
@@ -64,10 +64,10 @@ defmodule VintageNetWizard.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:phoenix_html, "~> 2.13"},
       {:jason, "~> 1.0"},
-      {:vintage_net_wifi, "~> 0.9.0"},
-      {:vintage_net, "~> 0.9.1"},
+      {:vintage_net_wifi, "~> 0.9.0 or ~> 0.10.0"},
+      {:vintage_net, "~> 0.9.1 or ~> 0.10.0"},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false},
-      {:dialyxir, "~> 1.0.0", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13", only: :test, runtime: false}
     ]
   end
